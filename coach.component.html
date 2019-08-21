@@ -1,0 +1,120 @@
+<form>
+  <mk-box header="Coach Information" [isCollapsable]="false" [isRemovable]="false">
+
+    <div class="row">
+      <div class="col-md-4 col-xs-12 form-group">
+
+        <mat-form-field name="lastName">
+          <input matInput [(ngModel)]="coachobj.lastName" id="lastName" type="text" class="form-control"
+            placeholder=" Last Name" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </div>
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="firstName">
+          <input matInput required [(ngModel)]="coachobj.firstName" id="firstName" type="text" class="form-control"
+            placeholder=" First Name" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorFirstName}}</div>
+      </div>
+
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="middle">
+          <input matInput [(ngModel)]="coachobj.middle" id="middle" type="text" class="form-control"
+            placeholder=" Middle Name" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="addressLine1">
+          <input matInput required [(ngModel)]="coachobj.addressLine1" id="addressLine1" type="text"
+            class="form-control" placeholder=" Address Line 1" class="form-control"
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorAddress1}}</div>
+      </div>
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="addressLine2">
+          <input matInput [(ngModel)]="coachobj.addressLine2" id="addressLine2" type="text" class="form-control"
+            placeholder=" Address Line 2" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+
+      </div>
+
+
+
+      <div class="col-md-4 col-xs-12"><br>
+        <mat-form-field>
+          <mat-label>Interest</mat-label>
+          <mat-select [(ngModel)]="coachobj.interest" style="width:150px;" [ngModelOptions]="{standalone: true}">
+            <mat-option value="Football">Football</mat-option>
+            <mat-option value="Hockey">Hockey</mat-option>
+            <mat-option value="Volleyball">Volleyball</mat-option>
+            <mat-option value="Basketball">Basketball</mat-option>
+            <mat-option value="Cricket">Cricket</mat-option>
+            <mat-option value="Handball">Handball</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div style="color: red">{{errorMsgForInterest}}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="city">
+          <input matInput required [(ngModel)]="coachobj.city" id="city" type="text" class="form-control"
+            placeholder=" City" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorCity}}</div>
+      </div>
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="state">
+          <input matInput required [(ngModel)]="coachobj.state" id="state" type="text" class="form-control"
+            placeholder=" State" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorState}}</div>
+      </div>
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="zip">
+          <input matInput required [(ngModel)]="coachobj.zip" id="zip" type="text" class="form-control"
+            placeholder=" Zip" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorZip}}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="phone1">
+          <input matInput required [(ngModel)]="coachobj.phone1" id="phone1" type="tel" class="form-control"
+            placeholder=" Phone 1" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorPhone1}}</div>
+      </div>
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="phone2">
+          <input matInput [(ngModel)]="coachobj.phone2" id="phone2" type="text" class="form-control"
+            placeholder="  Phone 2" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="email">
+          <input matInput required [(ngModel)]="coachobj.email" id="email" type="email" class="form-control" required
+            placeholder=" Email" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorEmail}}</div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-xs-12 pull-right">
+        <button (click)="pushCoach()" type="submit" class="btn btn-success">Submit</button>
+        <button type="reset" class="btn btn-danger" style="margin-left: 10px">Cancel</button>
+      </div>
+    </div>
+  </mk-box>
+</form>

@@ -1,0 +1,88 @@
+<form>
+  <mk-box header="College Information" [isCollapsable]="false" [isRemovable]="false">
+
+    <div class="row">
+
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="collegeName">
+          <input matInput [(ngModel)]="collegeobj.collegeName" id="collegeName" type="text" class="form-control"
+            placeholder=" College Name" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="addressLine1">
+          <input matInput required [(ngModel)]="collegeobj.addressLine1" id="addressLine1" type="text"
+            class="form-control" placeholder=" Address Line 1" class="form-control"
+            [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorAddress1}}</div>
+      </div>
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="addressLine2">
+          <input matInput [(ngModel)]="collegeobj.addressLine2" id="addressLine2" type="text" class="form-control"
+            placeholder=" Address Line 2" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="city">
+          <input matInput required [(ngModel)]="collegeobj.city" id="city" type="text" class="form-control"
+            placeholder=" City" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorCity}}</div>
+      </div>
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="state">
+          <input matInput required [(ngModel)]="collegeobj.state" id="state" type="text" class="form-control"
+            placeholder=" State" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorState}}</div>
+      </div>
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="zip">
+          <input matInput required [(ngModel)]="collegeobj.zip" id="zip" type="text" class="form-control"
+            placeholder=" Zip" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorZip}}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="phone1">
+          <input matInput required [(ngModel)]="collegeobj.phone1" id="phone1" type="tel" class="form-control"
+            placeholder=" Phone 1" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorPhone1}}</div>
+      </div>
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="phone2">
+          <input matInput [(ngModel)]="collegeobj.phone2" id="phone2" type="text" class="form-control"
+            placeholder="  Phone 2" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-xs-12 form-group">
+        <mat-form-field name="email">
+          <input matInput required [(ngModel)]="collegeobj.email" id="email" type="email" class="form-control" required
+            placeholder=" Email" class="form-control" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <div style="color: red">{{errorEmail}}</div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-xs-12 pull-right">
+        <button (click)="addCollege()" type="submit" class="btn btn-success">Submit</button>
+        <button type="reset" class="btn btn-danger" style="margin-left: 10px">Cancel</button>
+      </div>
+    </div>
+  </mk-box>
+</form>
